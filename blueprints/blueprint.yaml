@@ -40,6 +40,7 @@ resources:
         - key: environment
           value: Production
       environment_cp: '${input.SelectEnv}'
+      env_cp1: '${input.SelectEnv}'
   Cloud_Network_1:
     type: Cloud.Network
     metadata:
