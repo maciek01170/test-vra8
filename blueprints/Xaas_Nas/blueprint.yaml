@@ -1,0 +1,96 @@
+name: 'Xaas_Nas'
+version: 10
+formatVersion: 1
+inputs:
+  volName:
+    type: string
+    title: Volume Name
+    default: volume_00x
+  volId:
+    type: string
+    title: Volume Id
+    default: id_volume_00x
+  bgName:
+    type: string
+    title: Project name
+    default: itst_XaaS_MM
+  bgId:
+    type: string
+    title: Project Id
+    default: itst_XaaS_MM-id
+  svm:
+    type: string
+    title: SVM
+    default: svm_something
+  access:
+    type: string
+    title: Access
+    enum:
+      - cifs
+      - nfs3
+    default: cifs
+  deploymentTag:
+    type: string
+    oneOf:
+      - title: Production
+        const: production
+      - title: Test
+        const: test
+    title: Environment
+    default: test
+  notificationMail:
+    type: string
+    title: Notification Mail
+    default: maciej.macowicz@epfl.ch
+  requestor:
+    type: string
+    title: Requestor
+    default: maciej.macowicz@epfl.ch
+  reasonsForRequest:
+    type: string
+    title: Reason for request
+    default: I need that!
+  IPsRoot:
+    type: string
+    title: Root Access Policy
+    default: 128.178.2.0/24
+  IPsRO:
+    type: string
+    title: RO Access Policy
+    default: 128.178.0.0/16
+  IPsRW:
+    type: string
+    title: RW Access Policy
+    default: 128.178.2.0/24
+  webdavAccess:
+    type: string
+    oneOf:
+      - title: Enabled
+        const: enabled
+      - title: Disabled
+        const: disabled
+    title: WebDAV Access
+    default: disabled
+resources:
+  Custom_XaasNas_1:
+    type: Custom.XaasNas
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      volName: '${input.volName}'
+      volId: '${input.volId}'
+      bgName: '${input.bgName}'
+      bgId: '${input.bgId}'
+      svm: '${input.svm}'
+      access: '${input.access}'
+      deploymentTag: '${input.deploymentTag}'
+      notificationMail: '${input.notificationMail}'
+      requestor: '${input.requestor}'
+      reasonsForRequest: '${input.reasonsForRequest}'
+      targetTenant: epfl
+      webdavAccess: disabled
+      IPsRoot: '${input.IPsRoot}'
+      IPsRO: '${input.IPsRO}'
+      IPsRW: '${input.IPsRW}'
