@@ -1,5 +1,5 @@
-name: 'Xaas_Nas'
-version: 11
+name: Xaas_Nas
+version: 12
 formatVersion: 1
 inputs:
   volName:
@@ -74,10 +74,6 @@ inputs:
 resources:
   Custom_XaasNas_1:
     type: Custom.XaasNas
-    metadata:
-      layoutPosition:
-        - 0
-        - 0
     properties:
       volName: '${input.volName}'
       volId: '${input.volId}'
@@ -94,3 +90,4 @@ resources:
       IPsRoot: '${input.IPsRoot}'
       IPsRO: '${input.IPsRO}'
       IPsRW: '${input.IPsRW}'
+
