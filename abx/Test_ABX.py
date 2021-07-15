@@ -1,3 +1,4 @@
+# version 12
 def handler(context, inputs):
     greeting = "Hello, {0}!".format(inputs["target"])
     print(greeting)
